@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "pre-commit>=4.3.0",
     "pydantic-settings",
-    "python-dotenv"
+    "python-dotenv",
+    "pyaml"
 ]

@@ -8,6 +8,8 @@ ENVIRONMENTS = {"dev", "test", "prod"}
 class Settings(BaseSettings):
     ENVIRONMENT: str
     APP_NAME: str
+    API_KEY: str
+    PASSWORD: str
 
     @field_validator("ENVIRONMENT")
     @classmethod
