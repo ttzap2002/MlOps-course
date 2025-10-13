@@ -16,13 +16,13 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
 
 # Copy only dependency files first (to leverage caching)
-COPY lab/pyproject.toml lab/uv.lock ./
+COPY lab/lab1/pyproject.toml lab/lab1/uv.lock ./
 
 # Install project dependencies using uv
-RUN uv pip install --system -r pyproject.toml
+RUN uv sync --no-dev --frozen	
 
 # Copy the rest of the application code
-COPY lab . 
+COPY lab/lab1 . 
 
 # Expose the application port
 EXPOSE 8000

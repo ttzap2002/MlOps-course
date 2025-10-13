@@ -181,7 +181,6 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "pytest" },
     { name = "pytest-dotenv" },
-    { name = "python-dotenv" },
     { name = "scikit-learn" },
     { name = "uvicorn" },
 ]
@@ -191,11 +190,10 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.118.3" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "pre-commit", specifier = ">=4.3.0" },
-    { name = "pyaml" },
+    { name = "pyaml", specifier = ">=25.7.0" },
     { name = "pydantic-settings" },
-    { name = "pytest" },
+    { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-dotenv", specifier = ">=0.5.2" },
-    { name = "python-dotenv" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "uvicorn", specifier = ">=0.37.0" },
 ]
