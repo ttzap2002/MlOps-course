@@ -1,5 +1,5 @@
 # Use a minimal Python image as the base
-FROM python:3.12-slim
+FROM python:3.12-bookworm
 
 # Set the working directory in the container
 WORKDIR /app
@@ -19,7 +19,7 @@ ENV PATH="/root/.local/bin:${PATH}"
 COPY homework/pyproject.toml homework/uv.lock ./
 
 # Install project dependencies using uv
-RUN uv pip install --system -r pyproject.toml
+RUN uv sync --no-dev --frozen
 
 # Copy the rest of the application code
 COPY homework ./homework/
