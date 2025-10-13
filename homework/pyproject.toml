@@ -9,6 +9,8 @@ dependencies = [
     "fastapi>=0.119.0",
     "joblib>=1.5.2",
     "pydantic>=2.12.0",
+    "sentence-transformers>=5.1.1",
+    "uvicorn>=0.37.0",
 ]
 
 [project.optional-dependencies]

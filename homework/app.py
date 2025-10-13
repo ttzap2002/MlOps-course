@@ -1,14 +1,19 @@
 from fastapi import FastAPI
 from homework.inference import load_model
-import homework.inference as inference
+import homework.inference
 from sentence_transformers import SentenceTransformer
 from homework.api.models.transormers import PredictResponse, PredictRequest
+from pathlib import Path
 
 app = FastAPI()
+BASE_DIR = Path(__file__).resolve().parent
 
 try:
-    model_classifier = load_model("model/classifier.joblib")
-    sentence_model = SentenceTransformer("model/sentence_transformer.model")
+    model_path = BASE_DIR / "model" / "classifier.joblib"
+    sentence_model_path = BASE_DIR / "model" / "sentence_transformer.model"
+
+    model_classifier = load_model(model_path)
+    sentence_model = SentenceTransformer(str(sentence_model_path))
 except FileNotFoundError:
     raise FileNotFoundError("filed does not exist")
 
@@ -20,6 +25,7 @@ def welcome_root():
 
 @app.post("/predict")
 def predict(request: PredictRequest) -> PredictResponse:
-    print(request.text == request.dict()["text"])
-    prediction = inference.predict(model_classifier, sentence_model, request.text)
+    prediction = homework.inference.predict(
+        model_classifier, sentence_model, request.text
+    )
     return PredictResponse(prediction=prediction)

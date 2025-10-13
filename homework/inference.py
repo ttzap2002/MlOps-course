@@ -1,4 +1,6 @@
 import joblib
+from typing import Union
+from pathlib import Path
 
 CLASS_MAPPING = {
     0: "negative",
@@ -7,7 +9,7 @@ CLASS_MAPPING = {
 }
 
 
-def load_model(model_path: str):
+def load_model(model_path: Union[str, Path]):
     return joblib.load(model_path)
 
 
