@@ -5,31 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4824124e-55fb-49e2-907a-7c90bf50aa50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MlOps-course.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.python-version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sops.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/iris.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.env.prod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inference.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytest.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/secrets.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_fast_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_model.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework/inference.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/homework/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/homework/uv.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/lab1/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab/lab1/docker-compose.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Stub" />
       </list>
     </option>
   </component>
@@ -54,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.main.executor": "Run",
-    "Python.settings.executor": "Run",
-    "Python.training.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ttzap/MlOps-course",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.training.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;homework&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ttzap/MlOps-course/homework/.venv/bin/python&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="training" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MlOps-course" />
@@ -120,6 +103,19 @@
           <url>file://$PROJECT_DIR$/test/tests.py</url>
           <line>1</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lab/lab1/main.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lab/lab1/app.py</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/homework/app.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
