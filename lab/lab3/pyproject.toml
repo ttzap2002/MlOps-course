@@ -1,0 +1,16 @@
+[project]
+name = "MLOps_course_AGH_lab_03"
+version = "1.0.0"
+description = ""
+readme = "README.md"
+
+requires-python = ">=3.11"
+
+dependencies = [
+    "jupyter",
+    "matplotlib",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "ruff",
+]
