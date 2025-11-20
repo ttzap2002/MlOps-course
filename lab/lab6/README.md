@@ -1,35 +1,36 @@
-## Lab 7 - model optimization for inference
+# Lab 6 - data & models testing
 
-This lab focuses on optimizing machine learning models for inference. After training,
-models need to be optimized to reduce latency, memory usage, and computational costs
-in production environments. We will explore various PyTorch optimization techniques
-and conversion to ONNX format for efficient deployment.
+This lab concerns testing data quality, model behavioral testing, and explainability.
+Those operations are crucial part of data-centric AI approach, and constitute a large
+part of MLOps quality assurance.
 
-Proper optimization can reduce inference time by 2-10 times, significantly lowering
-infrastructure costs and improving user experience in production ML systems.
-
-**Learning Plan**
-1. PyTorch inference best practices (eval mode, no_grad).
-2. torch.compile() for automatic optimization.
-3. Model quantization
-4. GPU optimization strategies & CUDA 
-5. ONNX format for cross-platform deployment
+**Learning plan**
+1. Data quality testing:
+   - confident learning
+   - detecting & fixing data quality issues
+   - CleanLab
+2. Model behavioral testing:
+   - input perturbations and behavioral testing
+   - Giskard 
+3. ML explainability:
+   - local explainability
+   - gradient-based attribution methods
+   - Captum
 
 **Necessary software**
-- [Docker and Docker Compose](https://docs.docker.com/engine/install/), 
-  also [see those post-installation notes](https://docs.docker.com/engine/install/linux-postinstall/)
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) for dependency management
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+
+Note that you should also activate `uv` project and install dependencies with `uv sync`.
 
 **Lab**
 
 See [lab instruction](LAB_INSTRUCTION.md).
 
-There is no homework, only lab this time :)
+**Homework**
 
-**Additional Resources**
-- [PyTorch Performance Tuning Guide](https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html)
-- [Hugging Face Optimization Rush](https://huggingface.co/blog/Isayoften/optimization-rush)
-- [ML Compilers and Optimizers Introduction](https://huyenchip.com/2021/09/07/a-friendly-introduction-to-machine-learning-compilers-and-optimizers.html)
-- [ONNX Docs](https://onnxruntime.ai/docs/)
-- [ONNX Graph Optimizations](https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html)
-- [ONNX Execution Providers](https://iot-robotics.github.io/ONNXRuntime/docs/execution-providers/)
+See [homework instruction](HOMEWORK.md).
+
+**Data**
+
+In the lab, we will be using [booking.com reviews dataset](https://www.kaggle.com/datasets/jiashenliu/515k-hotel-reviews-data-in-europe?resource=download).
+In the homework, you will use [Banking77 dataset](https://huggingface.co/datasets/PolyAI/banking77).
