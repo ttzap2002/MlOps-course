@@ -18,7 +18,8 @@ dependencies = [
     "scikit-learn",
     "sentence-transformers",
     "transformers[torch]",
-    "torch"
+    "torch",
+    "polars>=1.35.2",
 ]
 
 [tool.uv.sources]
