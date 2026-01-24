@@ -4,7 +4,6 @@ from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.sdk import ObjectStoragePath
 
-BASE_PATH = ObjectStoragePath("s3://aws_default@weather-data/")
 
 def get_data() -> dict:
     print("Fetching data from API")
@@ -33,17 +32,18 @@ def save_data(df: pd.DataFrame, **kwargs) -> None:
     print("Saving the data")
 
     logical_date = kwargs["logical_date"]
-    formatted_date = logical_date.strftime("YYYY-MM-DD")
-    file_path = BASE_PATH / f"weather_{formatted_date}.csv"
+    formatted_date = logical_date.strftime("%Y-%m-%d")
+
     storage_options = {
         "client_kwargs": {
             "endpoint_url": "http://localstack:4566"
         }
     }
-    BASE_PATH.mkdir(exist_ok=True)
+
+    uri = f"s3://weather-data/weather_{formatted_date}.csv"
 
     df.to_csv(
-        file_path.as_uri(),
+        uri,
         index=False,
         storage_options=storage_options
     )

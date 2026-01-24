@@ -1,8 +1,6 @@
 import pandas as pd
 import requests
-from airflow import DAG
 from airflow.sdk import dag, task
-from airflow.providers.standard.operators.python import PythonOperator
 
 @dag()
 def weather_pipeline():
@@ -10,7 +8,7 @@ def weather_pipeline():
     def get_data() -> dict:
         print("Fetching data from API")
 
-            # New York temperature in 2025
+        # New York temperature in 2025
         url = "https://archive-api.open-meteo.com/v1/archive?latitude=40.7143&longitude=-74.006&start_date=2025-01-01&end_date=2025-12-31&hourly=temperature_2m&timezone=auto"
 
         resp = requests.get(url)
