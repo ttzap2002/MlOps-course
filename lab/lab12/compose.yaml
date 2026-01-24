@@ -37,7 +37,7 @@ x-airflow-common: &airflow-common
 
     # URL-encoded fake AWS connection, we must set endpoint_url for LocalStack
     AIRFLOW_CONN_AWS_DEFAULT: '{"conn_type": "aws", "login": "test", "password": "test", "extra": {"endpoint_url": "http://localstack:4566", "region_name": "us-east-1"}}'
-    AIRFLOW_CONN_POSTGRES_DATA: "postgresql://postgres:postgres@postgres-data:5432/data"
+    AIRFLOW_CONN_POSTGRES_DATA: '{"conn_type": "postgres", "host": "postgres-data", "login": "postgres", "password": "postgres", "schema": "data", "port": 5432}'
 
   volumes:
     # volumes to sync local environment and containers
@@ -159,8 +159,6 @@ services:
     environment:
       SERVICES: "s3"  # just S3 service
     volumes:
-      - localstack_data:/var/lib/localstack
-      - "/var/run/docker.sock:/var/run/docker.sock"
       - ./localstack-init:/etc/localstack/init
     healthcheck:
       test: [ "CMD", "curl", "-fsS", "http://localhost:4566/_localstack/health" ]
