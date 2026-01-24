@@ -21,7 +21,7 @@ RAW_DATA_PATH = "s3://nyc-taxi/processed/*.parquet"
 ML_DATA_DIR = BASE_S3 / "ml_data"
 MODELS_DIR = BASE_S3 / "models"
 
-S3_OPTS = {
+S3_OPTIONS = {
     "aws_access_key_id": "test",
     "aws_secret_access_key": "test",
     "endpoint_url": "http://localstack:4566",
@@ -38,7 +38,7 @@ S3_OPTS = {
 def train_taxi_model():
     @task()
     def prepare_data(input_path: str, output_path: ObjectStoragePath) -> dict:
-        df = pl.read_parquet(input_path, storage_options=S3_OPTS)
+        df = pl.read_parquet(input_path, storage_options=S3_OPTIONS)
         df = df.sort("date")
         max_date = df["date"].max()
         split_date = datetime.date(max_date.year, max_date.month, 1)
@@ -49,8 +49,8 @@ def train_taxi_model():
         train_path = output_path / "train.parquet"
         test_path = output_path / "test.parquet"
 
-        train.write_parquet(str(train_path), storage_options=S3_OPTS)
-        test.write_parquet(str(test_path), storage_options=S3_OPTS)
+        train.write_parquet(str(train_path), storage_options=S3_OPTIONS)
+        test.write_parquet(str(test_path), storage_options=S3_OPTIONS)
 
         return {
             "train_path": str(train_path),
@@ -59,8 +59,8 @@ def train_taxi_model():
 
     @task()
     def train_model(models_output_dir: ObjectStoragePath, model_type: str, dataset_info: dict):
-        train = pl.read_parquet(dataset_info["train_path"], storage_options=S3_OPTS)
-        test = pl.read_parquet(dataset_info["test_path"], storage_options=S3_OPTS)
+        train = pl.read_parquet(dataset_info["train_path"], storage_options=S3_OPTIONS)
+        test = pl.read_parquet(dataset_info["test_path"], storage_options=S3_OPTIONS)
 
         X_train = train["date"].cast(pl.Int64).to_numpy().reshape(-1, 1)
         y_train = train["total_rides"].to_numpy()
