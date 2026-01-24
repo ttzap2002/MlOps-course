@@ -25,8 +25,8 @@ def open_meteo_weather_backfill():
         end_date = logical_date.add(days=6)
 
         params = {
-            "latitude": 40.730610,
-            "longitude": -73.935242,
+            "latitude": 40.7143,
+            "longitude": -74.006,
             "start_date": start_date.to_date_string(),
             "end_date": end_date.to_date_string(),
             "hourly": "temperature_2m",
